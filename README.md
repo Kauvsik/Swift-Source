@@ -20,14 +20,14 @@ A comprehensive vendor bidding and project management system built on Salesforce
 - [License](#license)
 - [Support](#support)
 
-## ✨ Features
+## Features
 
 ### Client Features
 - **Project Management**: Create and manage project listings with deadlines
 - **Smart Bid Recommendations**: Get 3 bid options automatically:
-  - 💰 **Lowest Price** - Best for budget-conscious projects
-  - ⚡ **Fastest Delivery** - Best for time-sensitive projects
-  - ⭐ **Best Overall** - Balanced recommendation (60% price, 40% speed)
+  - **Lowest Price** - Best for budget-conscious projects
+  - **Fastest Delivery** - Best for time-sensitive projects
+  - **Best Overall** - Balanced recommendation (60% price, 40% speed)
 - **Visual Bid Comparison**: Interactive modal to compare vendor proposals
 - **Vendor Assignment**: Seamless vendor assignment and project tracking
 
@@ -45,7 +45,7 @@ A comprehensive vendor bidding and project management system built on Salesforce
 - **Status Management**: Complete project lifecycle tracking
 - **Experience Cloud Ready**: Works in both internal and community portals
 
-## 🏗️ Architecture
+## Architecture
 
 ### Custom Objects
 
@@ -92,7 +92,7 @@ A comprehensive vendor bidding and project management system built on Salesforce
 - **UI**: Salesforce Lightning Design System (SLDS)
 - **Automation**: Schedulable Apex for auto-bid selection
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -181,7 +181,7 @@ sfdx force:user:permset:assign -n Bidlance_Admin -u admin@yourorg.com
 
 </details>
 
-## ⚙️ Configuration
+## Configuration
 
 ### 1. Schedule Automated Bid Selection
 
@@ -229,7 +229,7 @@ Apex Classes:
 - Client Portal: `c-client-project`
 - Vendor Portal: `c-vendor-project`, `c-vendor-assigned-project`
 
-## 💻 Usage
+## Usage
 
 ### For Clients
 
@@ -247,9 +247,9 @@ When deadline passes:
 ├── System auto-generates 3 recommendations
 ├── Click "View Bids" on project
 ├── Review options:
-│   ├── 💰 Lowest Price
-│   ├── ⚡ Fastest Delivery
-│   └── ⭐ Best Overall
+│   ├── Lowest Price
+│   ├── Fastest Delivery
+│   └── Best Overall
 └── Click "Select This Bid"
 ```
 
@@ -280,7 +280,7 @@ After deadline:
 └── View only (cannot edit)
 ```
 
-## 🧩 Components
+## Components
 
 ### Apex Classes
 
@@ -301,7 +301,7 @@ After deadline:
 | `vendorProject` | 3 | Vendor project browser with bidding interface |
 | `vendorAssignedProject` | 3 | Vendor assigned projects tracker |
 
-## 📚 API Reference
+## API Reference
 
 ### Bid Selection Algorithm
 
@@ -327,9 +327,9 @@ Bids submitted:
 - Vendor C: $10,000, 10 days
 
 Results:
-💰 Lowest Price: Vendor A ($8,000)
-⚡ Fastest Delivery: Vendor B (7 days)
-⭐ Best Overall: Vendor C (Score: 0.55)
+Lowest Price: Vendor A ($8,000)
+Fastest Delivery: Vendor B (7 days)
+Best Overall: Vendor C (Score: 0.55)
 ```
 
 ### Key Methods
@@ -394,7 +394,7 @@ Set<Id> ids = new Set<Id>{'a01XX...', 'a01YY...'};
 Map<Id, String> names = clientProject.getVendorNames(ids);
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Run Tests
 
@@ -436,7 +436,7 @@ Then: First submitted bid wins
 - Apex Classes: 85%+
 - LWC Components: 80%+
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please follow these steps:
 
@@ -482,14 +482,14 @@ sfdx force:source:push -u ScratchOrg
 sfdx force:apex:test:run -u ScratchOrg
 ```
 
-## 📖 Documentation
+## Documentation
 
 - [Implementation Guide](docs/IMPLEMENTATION_GUIDE.md) - Detailed setup instructions
 - [API Documentation](docs/API.md) - Complete API reference
 - [Troubleshooting](docs/TROUBLESHOOTING.md) - Common issues and solutions
 - [Change Log](CHANGELOG.md) - Version history
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -502,15 +502,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction...
 ```
-
-## 🆘 Support
-
-### Get Help
-
-- 🐛 **Report Bugs**: [GitHub Issues](https://github.com/yourusername/bidlance/issues)
-- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/yourusername/bidlance/discussions)
-- 📧 **Email**: support@bidlance.com
-- 💬 **Slack**: [Join our community](https://bidlance.slack.com)
 
 ### FAQs
 
@@ -539,15 +530,15 @@ No. Vendors only see their own bids. Clients see all bids but not vendor identit
 Project remains in "Bidding In-Progress" status. No recommendations generated.
 </details>
 
-## 🗺️ Roadmap
+## Roadmap
 
-### Version 2.0 (Q3 2026)
+### Version 2.0
 - [ ] Multi-currency support
 - [ ] Email notifications
 - [ ] Advanced filtering
 - [ ] Bulk operations
 
-### Version 3.0 (Q4 2026)
+### Version 3.0
 - [ ] Mobile app for vendors
 - [ ] Analytics dashboard
 - [ ] AI-powered recommendations
@@ -559,40 +550,28 @@ Project remains in "Bidding In-Progress" status. No recommendations generated.
 - [ ] Vendor rating system
 - [ ] Contract management
 
-## 📊 Project Stats
-
-![GitHub repo size](https://img.shields.io/github/repo-size/yourusername/bidlance)
-![GitHub contributors](https://img.shields.io/github/contributors/yourusername/bidlance)
-![GitHub stars](https://img.shields.io/github/stars/yourusername/bidlance?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/bidlance?style=social)
-
 - **Total Classes**: 6
 - **Total Components**: 3
 - **Custom Objects**: 4
 - **Lines of Code**: ~1,500
 - **Code Coverage**: 85%+
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Salesforce Trailblazer Community** - For best practices and guidance
 - **Lightning Design System** - For beautiful UI components
 - **All Contributors** - Thank you for your contributions!
 
-## 📞 Contact
+## Contact
 
-**Project Maintainer**: Your Name
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
+**Project Maintainer**: Kauvsik Chandrasekar
+- GitHub: https://github.com/Kauvsik
+- LinkedIn: www.linkedin.com/in/kauvsik
+- Email: kauvsikc@gmail.com
 
 ---
 
 <div align="center">
 
-**⭐ Star this repository if you found it helpful!**
-
-Made with ❤️ by the Bidlance Team
-
-[Report Bug](https://github.com/yourusername/bidlance/issues) · [Request Feature](https://github.com/yourusername/bidlance/discussions)
 
 </div>
