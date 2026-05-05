@@ -51,7 +51,7 @@ A comprehensive vendor bidding and project management system built on Salesforce
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                     Swift Source Data Model                      │
+│                     Swift Source Data Model                  │
 ├──────────────────────────────────────────────────────────────┤
 │                                                              │
 │  Account (Client)                                            │
