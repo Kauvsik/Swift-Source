@@ -1,0 +1,195 @@
+<template>
+
+    <!-- 🔥 HEADER -->
+    <lightning-card>
+        <div class="header-bar">
+            <div>
+                <p class="title">🛠️ Verified Projects</p>
+                <p class="subtitle">Browse and bid on available projects</p>
+            </div>
+
+            <lightning-button 
+                label="← Dashboard"
+                variant="neutral"
+                onclick={goBack}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+
+    <!-- 🔥 TABLE -->
+    <lightning-card>
+        <div class="table-container">
+            <lightning-datatable
+                key-field="Id"
+                data={data}
+                columns={columns}
+                hide-checkbox-column
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+
+    <!-- 🔥 MODAL -->
+    <template if:true={showBidModal}>
+        <section class="custom-modal">
+
+            <div class="modal-container">
+
+                <!-- HEADER -->
+                <div class="modal-header">
+                    <div>
+                        <h2 class="modal-title">{modalTitle}</h2>
+                        <p class="modal-subtitle">{selectedProject.Name}</p>
+                    </div>
+
+                    <lightning-button-icon 
+                        icon-name="utility:close"
+                        onclick={closeBidModal}>
+                    </lightning-button-icon>
+                </div>
+
+                <!-- 🔥 SCROLLABLE BODY -->
+                <div class="modal-body">
+
+                    <!-- ALERT -->
+                    <template if:true={isDeadlinePassedForSelected}>
+                        <div class="alert">
+                            ⛔ Bidding closed for this project
+                        </div>
+                    </template>
+
+                    <!-- 🔥 BID + PROJECT SPLIT -->
+                    <div class="bid-layout">
+
+                        <!-- LEFT -->
+                        <div class="bid-form">
+                            <p class="section-title">📝 Your Bid</p>
+
+                            <div class="form-row">
+                                <lightning-input
+                                    type="number"
+                                    label="Quote Price (₹)"
+                                    value={quotePrice}
+                                    onchange={handleQuotePriceChange}
+                                    formatter="currency"
+                                    disabled={isInputDisabled}>
+                                </lightning-input>
+
+                                <lightning-input
+                                    type="number"
+                                    label="Delivery (Days)"
+                                    value={estimatedDays}
+                                    onchange={handleEstimatedDaysChange}
+                                    disabled={isInputDisabled}>
+                                </lightning-input>
+                            </div>
+
+                            <lightning-textarea
+                                label="Proposal Message"
+                                value={proposalMessage}
+                                onchange={handleProposalMessageChange}
+                                placeholder="Explain your approach..."
+                                disabled={isInputDisabled}>
+                            </lightning-textarea>
+                        </div>
+
+                        <!-- RIGHT -->
+                        <div class="project-card">
+                            <p class="section-title">📌 Project Info</p>
+
+                            <p><strong>Budget: </strong>
+                                <lightning-formatted-number 
+                                    value={selectedProject.Budget__c} 
+                                    format-style="currency" 
+                                    currency-code="INR">
+                                </lightning-formatted-number>
+                            </p>
+
+                            <p><strong>Deadline: </strong> {formattedDeadline}</p>
+
+                            <p><strong>Time Left: </strong> 
+                                <span class="time-left">{selectedTimeLeft}</span>
+                            </p>
+
+                            <p><strong>Category: </strong> {selectedProject.Category__c}</p>
+                        </div>
+
+                    </div>
+
+                    <!-- BID INFO -->
+                    <template if:true={isViewMode}>
+                        <div class="info-card">
+                            <p><strong>Bid:</strong> {existingBid.Name}</p>
+                            <p><strong>Status:</strong> {bidStatusLabel}</p>
+                            <p><strong>Date:</strong> {bidSubmittedDate}</p>
+                        </div>
+                    </template>
+
+                    <!-- DESCRIPTION -->
+                    <div class="info-card">
+                        <p><strong>Description:</strong> {selectedProject.Project_Description__c}</p>
+                    </div>
+
+                </div>
+
+                <!-- 🔥 STICKY FOOTER -->
+                <div class="modal-footer">
+
+                    <div class="left-actions">
+
+                        <template if:true={canEditBid}>
+                            <template if:false={isEditMode}>
+                                <lightning-button 
+                                    label="Edit"
+                                    variant="brand"
+                                    onclick={enableEditMode}>
+                                </lightning-button>
+                            </template>
+                        </template>
+
+                        <template if:true={isEditMode}>
+                            <lightning-button 
+                                label="Save"
+                                variant="brand"
+                                onclick={handleUpdateBid}>
+                            </lightning-button>
+                        </template>
+
+                        <template if:true={canWithdrawBid}>
+                            <lightning-button 
+                                label="Withdraw"
+                                variant="destructive"
+                                onclick={handleWithdrawBid}>
+                            </lightning-button>
+                        </template>
+
+                    </div>
+
+                    <div class="right-actions">
+
+                        <lightning-button 
+                            label="Close"
+                            onclick={closeBidModal}>
+                        </lightning-button>
+
+                        <template if:true={showSubmitButton}>
+                            <lightning-button 
+                                label="Submit Bid"
+                                variant="brand"
+                                class="submit-btn"
+                                onclick={handleSubmitBid}>
+                            </lightning-button>
+                        </template>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="backdrop"></div>
+    </template>
+
+</template>

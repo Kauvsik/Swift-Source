@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor__c</fullName>
+    <label>Vendor</label>
+    <description>Links this project to the vendor who will work on it</description>
+    <inlineHelpText>Select the vendor assigned to this project. This field establishes the relationship between projects and vendors.</inlineHelpText>
+    <type>Lookup</type>
+    <referenceTo>Vendor__c</referenceTo>
+    <relationshipLabel>Projects</relationshipLabel>
+    <relationshipName>Projects</relationshipName>
+    <required>false</required>
+    <deleteConstraint>SetNull</deleteConstraint>
+</CustomField>

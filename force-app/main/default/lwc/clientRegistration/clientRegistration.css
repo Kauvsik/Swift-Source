@@ -1,0 +1,54 @@
+.container {
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* SECTION */
+.section {
+    margin-top: 25px;
+}
+
+.section-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+/* FULL WIDTH */
+.full-width {
+    margin-top: 15px;
+}
+
+/* ACTIONS */
+.actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* OPTIONAL PREMIUM TOUCH */
+lightning-card {
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}

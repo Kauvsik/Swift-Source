@@ -1,0 +1,44 @@
+.card {
+    text-align: center;
+    padding: 1.2rem;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card p {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 6px;
+}
+
+.card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 6px;
+    color: #111827;
+}
+
+.highlight {
+    border-left: 4px solid #ef4444;
+}
+
+.success {
+    border-left: 4px solid #22c55e;
+}
+
+/* Optional color accents */
+.card:nth-child(1) {
+    border-left: 4px solid #3b82f6;
+}
+
+.card:nth-child(4) {
+    border-left: 4px solid #f59e0b;
+}

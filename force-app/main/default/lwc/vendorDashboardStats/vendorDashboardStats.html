@@ -1,0 +1,56 @@
+<template>
+    <div class="slds-grid slds-wrap slds-gutters slds-p-around_small">
+
+        <!-- Total Bids -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+            <div class="card">
+                <lightning-icon icon-name="standard:work_order" size="medium"></lightning-icon>
+                <p>Total Bids</p>
+                <h2>{totalBids}</h2>
+            </div>
+        </div>
+
+        <!-- Pending Bids -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+            <div class="card highlight">
+                <lightning-icon icon-name="utility:warning" size="medium"></lightning-icon>
+                <p>Pending Bids</p>
+                <h2>{pendingBids}</h2>
+            </div>
+        </div>
+
+        <!-- Won Projects -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+            <div class="card success">
+                <lightning-icon icon-name="utility:check" size="medium"></lightning-icon>
+                <p>Won Projects</p>
+                <h2>{wonProjects}</h2>
+            </div>
+        </div>
+
+        <!-- Total Earnings -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+            <div class="card">
+                <lightning-icon icon-name="utility:money" size="medium"></lightning-icon>
+                <p>Total Earnings</p>
+                <h2>
+                    <lightning-formatted-number 
+                        value={totalEarnings} 
+                        format-style="currency" 
+                        currency-code="INR">
+                    </lightning-formatted-number>
+                </h2>
+            </div>
+        </div>
+
+        <!-- Avg Delivery -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+            <div class="card">
+                <lightning-icon icon-name="utility:clock" size="medium"></lightning-icon>
+                <p>Avg Delivery (Days)</p>
+                <h2>{avgDelivery}</h2>
+            </div>
+        </div>
+
+    </div>
+</template>

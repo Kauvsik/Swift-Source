@@ -1,0 +1,42 @@
+.container {
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+/* Description */
+.description-box {
+    margin-top: 20px;
+}
+
+/* Buttons */
+.button-row {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit-btn {
+    font-weight: 600;
+}

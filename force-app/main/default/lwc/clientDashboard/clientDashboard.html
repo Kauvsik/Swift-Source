@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="Client Dashboard">
+
+        <div class="slds-p-around_medium">
+
+            <!-- 🔥 Welcome Section -->
+            <div class="slds-m-bottom_large">
+                <p class="heading">
+                    Welcome {accountName}
+                </p>
+            </div>
+
+            <!-- 🔥 Stats Section -->
+            <div class="slds-m-bottom_large">
+
+                <div class="section-header">
+                    <lightning-icon icon-name="standard:dashboard" size="small"></lightning-icon>
+                    <span>Dashboard Overview</span>
+                </div>
+
+                <div class="stats-container">
+                    <c-client-dashboard-stats projects={projects}>
+                    </c-client-dashboard-stats>
+                </div>
+
+            </div>
+
+            <!-- 🔥 Action Buttons -->
+            <div class="button-row">
+
+                <lightning-button 
+                    label="View Projects" 
+                    variant="brand"
+                    onclick={handleNavigateToProject}>
+                </lightning-button>
+
+                <lightning-button 
+                    label="New Project" 
+                    variant="success"
+                    onclick={handleNavigateToNewProject}>
+                </lightning-button>
+
+                <lightning-button 
+                    label="Logout" 
+                    variant="destructive"
+                    onclick={handleLogout}>
+                </lightning-button>
+
+            </div>
+
+        </div>
+
+    </lightning-card>
+</template>

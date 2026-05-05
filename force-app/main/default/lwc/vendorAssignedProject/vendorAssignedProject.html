@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Assigned Projects">
+
+        <div class="slds-p-around_medium">
+            <lightning-button 
+                label="Back to Dashboard"
+                variant="brand"
+                onclick={goBack}>
+            </lightning-button>
+        </div>
+
+        <template if:true={hasProjects}>
+            
+    <div style="height: 400px;">
+        <lightning-datatable
+            key-field="Id"
+            data={projects}
+            columns={columns}>
+        </lightning-datatable>
+    </div>
+</template>
+
+<template if:false={hasProjects}>
+    <p class="slds-p-around_medium">No assigned projects found.</p>
+</template>
+
+    </lightning-card>
+</template>

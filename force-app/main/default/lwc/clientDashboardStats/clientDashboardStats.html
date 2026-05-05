@@ -1,0 +1,56 @@
+<template>
+    <div class="slds-grid slds-wrap slds-gutters slds-p-around_small">
+
+        <!-- Total Projects -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+            <div class="card">
+                <lightning-icon icon-name="standard:work_order" size="medium"></lightning-icon>
+                <p>Total Projects</p>
+                <h2>{totalProjects}</h2>
+            </div>
+        </div>
+
+        <!-- Pending Approval -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+            <div class="card highlight">
+                <lightning-icon icon-name="utility:warning" size="medium"></lightning-icon>
+                <p>Pending Approval</p>
+                <h2>{pendingApprovals}</h2>
+            </div>
+        </div>
+
+        <!-- Active Projects -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+            <div class="card success">
+                <lightning-icon icon-name="utility:check" size="medium"></lightning-icon>
+                <p>Active Projects</p>
+                <h2>{activeProjects}</h2>
+            </div>
+        </div>
+
+        <!-- Total Budget -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+            <div class="card">
+                <lightning-icon icon-name="utility:money" size="medium"></lightning-icon>
+                <p>Total Budget</p>
+                <h2>
+                    <lightning-formatted-number 
+                        value={totalBudget} 
+                        format-style="currency" 
+                        currency-code="INR">
+                    </lightning-formatted-number>
+                </h2>
+            </div>
+        </div>
+
+        <!-- Avg Delivery -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+            <div class="card">
+                <lightning-icon icon-name="utility:clock" size="medium"></lightning-icon>
+                <p>Avg Delivery (Days)</p>
+                <h2>{avgDelivery}</h2>
+            </div>
+        </div>
+
+    </div>
+</template>

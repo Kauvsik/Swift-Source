@@ -1,0 +1,53 @@
+<template>
+    <div class="login-wrapper">
+
+        <lightning-card class="login-card">
+
+            <!-- Header -->
+            <div class="header">
+                <h1 class="title">Welcome Back</h1>
+                <p class="subtitle">Sign in to continue</p>
+            </div>
+
+            <!-- Form -->
+            <div class="form">
+
+                <lightning-input 
+                    type="email" 
+                    data-id="email" 
+                    label="Email"
+                    class="input">
+                </lightning-input>
+
+                <lightning-input 
+                    type="password" 
+                    data-id="password" 
+                    label="Password"
+                    class="input">
+                </lightning-input>
+
+                <!-- Buttons -->
+                <div class="button-group">
+
+                    <lightning-button 
+                        label="Sign In" 
+                        variant="brand"
+                        class="full-btn"
+                        onclick={handleLogin}>
+                    </lightning-button>
+
+                    <lightning-button 
+                        label="Create Account" 
+                        variant="neutral"
+                        class="full-btn"
+                        onclick={handleNavigateToRegister}>
+                    </lightning-button>
+
+                </div>
+
+            </div>
+
+        </lightning-card>
+
+    </div>
+</template>

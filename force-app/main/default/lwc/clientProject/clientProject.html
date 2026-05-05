@@ -1,0 +1,145 @@
+<template>
+
+    <!-- 🔥 HEADER / ACTION BAR -->
+    <lightning-card>
+        <div class="header-bar">
+            <div class="left">
+                <p class="title">📁 Projects</p>
+                <p class="subtitle">Manage and review your project bids</p>
+            </div>
+
+            <div class="right">
+                <lightning-button 
+                    label="← Dashboard"
+                    variant="neutral"
+                    onclick={goBack}>
+                </lightning-button>
+
+                <lightning-button 
+                    label="+ New Project"
+                    variant="brand"
+                    onclick={newProject}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+
+    <!-- 🔥 PROJECT TABLE -->
+    <lightning-card>
+        <div class="table-container">
+            <lightning-datatable
+                key-field="Id"
+                data={data}
+                columns={columns}
+                hide-checkbox-column
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+
+    <!-- 🔥 MODAL -->
+    <template if:true={showBidModal}> 
+    <section role="dialog" class="custom-modal">
+
+        <div class="modal-container">
+
+            <!-- 🔥 HEADER -->
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">🏆 Select Best Bid</h2>
+                    <p class="modal-subtitle">{selectedProject.Name}</p>
+                </div>
+
+                <lightning-button-icon 
+                    icon-name="utility:close"
+                    alternative-text="Close"
+                    onclick={closeBidModal}>
+                </lightning-button-icon>
+            </div>
+
+            <!-- 🔥 BODY -->
+            <div class="modal-body">
+
+                <!-- Budget Highlight -->
+                <div class="budget-box">
+                    💰 Budget:
+                    <lightning-formatted-number 
+                        value={selectedProject.Budget__c} 
+                        format-style="currency" 
+                        currency-code="INR">
+                    </lightning-formatted-number>
+                </div>
+
+                <!-- 🔥 BID CARDS -->
+                <div class="bid-grid">
+
+                    <!-- PRICE -->
+                    <template if:true={hasBestPrice}>
+                        <div class="bid-card price">
+                            <p class="badge">💰 Best Price</p>
+                            <h3>₹ {bestPrice}</h3>
+                            <p class="vendor">{bestPriceVendor}</p>
+                            <p class="meta">{bestPriceDays} days</p>
+
+                            <lightning-button 
+                                label="Select"
+                                variant="brand"
+                                class="select-btn"
+                                onclick={approvePriceBid}>
+                            </lightning-button>
+                        </div>
+                    </template>
+
+                    <!-- FASTEST -->
+                    <template if:true={hasFastestDelivery}>
+                        <div class="bid-card fast">
+                            <p class="badge">⚡ Fastest Delivery</p>
+                            <h3>₹ {fastestPrice}</h3>
+                            <p class="vendor">{fastestVendor}</p>
+                            <p class="meta">{fastestDays} days</p>
+
+                            <lightning-button 
+                                label="Select"
+                                variant="success"
+                                class="select-btn"
+                                onclick={approveDeliveryBid}>
+                            </lightning-button>
+                        </div>
+                    </template>
+
+                    <!-- OVERALL -->
+                    <template if:true={hasBestOverall}>
+                        <div class="bid-card overall highlight-card">
+                            <p class="badge">⭐ Best Overall</p>
+                            <h3>₹ {bestOverallPrice}</h3>
+                            <p class="vendor">{bestOverallVendor}</p>
+                            <p class="meta">{bestOverallDays} days</p>
+
+                            <lightning-button 
+                                label="Select"
+                                variant="brand"
+                                class="select-btn primary"
+                                onclick={approveOverallBid}>
+                            </lightning-button>
+                        </div>
+                    </template>
+
+                </div>
+
+                <!-- EMPTY STATE -->
+                <template if:false={hasAnyBids}>
+                    <div class="empty">
+                        🚫 No bids available yet
+                    </div>
+                </template>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="backdrop"></div>
+</template>
+
+</template>

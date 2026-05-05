@@ -1,0 +1,31 @@
+<template>
+    <template if:true={isLogin}>
+        <c-vendor-login onnavigate={handleNavigation}></c-vendor-login>
+    </template>
+
+    <template if:true={isRegister}>
+        <c-vendor-registration onnavigate={handleNavigation}></c-vendor-registration>
+    </template>
+
+    <template if:true={isDashboard}>
+    <c-vendor-dashboard 
+        onnavigate={handleNavigation} 
+        vendor-id={vendorId}>
+    </c-vendor-dashboard>
+</template>
+
+<template if:true={isProject}>
+    <c-vendor-project 
+        onnavigate={handleNavigation} 
+        vendor-id={vendorId}>
+    </c-vendor-project>
+</template>
+
+<template if:true={isAssignedProjects}>
+    <c-vendor-assigned-project 
+        vendor-id={vendorId}
+        onnavigate={handleNavigation}>
+    </c-vendor-assigned-project>
+</template>
+
+</template>

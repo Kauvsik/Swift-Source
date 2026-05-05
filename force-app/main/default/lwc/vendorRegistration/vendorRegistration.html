@@ -1,0 +1,153 @@
+<template>  
+    <lightning-card title="🏢 Vendor Registration">
+
+        <div class="container">
+
+            <!-- 🔥 HEADER -->
+            <div class="header">
+                <p class="title">Create Your Vendor Profile</p>
+                <p class="subtitle">
+                    Join the platform and start bidding on projects
+                </p>
+            </div>
+
+            <!-- 🔥 COMPANY DETAILS -->
+            <div class="section">
+                <p class="section-title">Company Information</p>
+
+                <div class="grid">
+
+                    <lightning-input 
+                        type="text" 
+                        data-id="companyName" 
+                        label="Company Name">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="email" 
+                        data-id="email" 
+                        label="Email">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="tel" 
+                        data-id="phone" 
+                        label="Phone">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="password" 
+                        data-id="password"  
+                        label="Password">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="text" 
+                        data-id="registrationNumber" 
+                        label="Registration Number">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="url" 
+                        data-id="website" 
+                        label="Website">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="text" 
+                        data-id="address" 
+                        label="Address">
+                    </lightning-input>
+
+                </div>
+
+                <!-- 🔥 EXPERTISE -->
+                <div class="full-width">
+                    <lightning-dual-listbox
+                        data-id="expertise"
+                        label="Select Expertise"
+                        source-label="Available"
+                        selected-label="Selected"
+                        options={expertiseOptions}
+                        value={value}
+                        onchange={handleChange}>
+                    </lightning-dual-listbox>
+                </div>
+
+                <!-- 🔥 DESCRIPTION -->
+                <div class="full-width">
+                    <lightning-textarea 
+                        data-id="companyDescription" 
+                        label="Company Description"
+                        placeholder="Tell us about your company...">
+                    </lightning-textarea>
+                </div>
+
+            </div>
+
+            <!-- 🔥 CONTACT PERSON -->
+            <div class="section">
+                <p class="section-title">Point of Contact</p>
+
+                <div class="grid">
+
+                    <lightning-input 
+                        type="text" 
+                        data-id="contactPersonFirstName" 
+                        label="First Name">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="text" 
+                        data-id="contactPersonLastName" 
+                        label="Last Name">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="tel" 
+                        data-id="contactPersonPhone" 
+                        label="Phone">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="email" 
+                        data-id="contactPersonEmail" 
+                        label="Email">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="text" 
+                        data-id="contactPersonDepartment" 
+                        label="Department">
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="text" 
+                        data-id="contactPersonRole" 
+                        label="Role">
+                    </lightning-input>
+
+                </div>
+            </div>
+
+            <!-- 🔥 ACTION BUTTONS -->
+            <div class="actions">
+
+                <lightning-button 
+                    label="← Login"
+                    variant="neutral"
+                    onclick={handleNavigateToLogin}>
+                </lightning-button>
+
+                <lightning-button 
+                    label="Register"
+                    variant="brand"
+                    onclick={handleRegister}>
+                </lightning-button>
+
+            </div>
+
+        </div>
+
+    </lightning-card>
+</template>

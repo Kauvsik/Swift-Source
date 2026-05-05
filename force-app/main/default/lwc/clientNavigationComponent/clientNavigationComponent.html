@@ -1,0 +1,30 @@
+<template>
+    <template if:true={isLogin}>
+        <c-client-login onnavigate={handleNavigation}></c-client-login>
+    </template>
+
+    <template if:true={isRegister}>
+        <c-client-registration onnavigate={handleNavigation}></c-client-registration>
+    </template>
+
+    <template if:true={isDashboard}>
+        <c-client-dashboard 
+            onnavigate={handleNavigation} 
+            account-id={accountId}>
+        </c-client-dashboard>
+    </template>
+
+    <template if:true={isProject}>
+        <c-client-project 
+            onnavigate={handleNavigation} 
+            account-id={accountId}>
+        </c-client-project>
+    </template>
+
+    <template if:true={isNewProject}>
+        <c-client-new-project-request 
+            onnavigate={handleNavigation} 
+            account-id={accountId}>
+        </c-client-new-project-request>
+    </template>
+</template>

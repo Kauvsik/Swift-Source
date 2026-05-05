@@ -1,0 +1,33 @@
+/* Same as vendor for consistency */
+
+.heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Section header */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1f2937;
+    margin-bottom: 14px;
+}
+
+/* Stats container */
+.stats-container {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 16px;
+}
+
+/* Buttons */
+.button-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
