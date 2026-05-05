@@ -51,7 +51,7 @@ A comprehensive vendor bidding and project management system built on Salesforce
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                     Bidlance Data Model                      │
+│                     Swift Source Data Model                      │
 ├──────────────────────────────────────────────────────────────┤
 │                                                              │
 │  Account (Client)                                            │
@@ -106,8 +106,8 @@ A comprehensive vendor bidding and project management system built on Salesforce
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/bidlance.git
-cd bidlance
+git clone https://github.com/Kauvsik/Swift-Source
+cd Swift-Source
 
 # Authenticate to your org
 sfdx auth:web:login -a myorg
@@ -119,7 +119,7 @@ sfdx auth:web:login -a myorg
 sfdx force:source:deploy -p force-app -u myorg
 
 # Assign permission sets
-sfdx force:user:permset:assign -n Bidlance_Admin -u admin@yourorg.com
+sfdx force:user:permset:assign -n Swift_Source_Admin -u admin@yourorg.com
 ```
 
 #### Option 2: Manual Deployment
@@ -189,7 +189,7 @@ sfdx force:user:permset:assign -n Bidlance_Admin -u admin@yourorg.com
 // Execute in Developer Console > Execute Anonymous Apex
 BidAutoScheduler scheduler = new BidAutoScheduler();
 String cronExp = '0 0 * * * ?'; // Run every hour
-System.schedule('Bidlance Auto Bid Selector', cronExp, scheduler);
+System.schedule('Swift-Source Auto Bid Selector', cronExp, scheduler);
 ```
 
 ### 2. Configure Profiles & Permissions
@@ -496,7 +496,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```
 MIT License
 
-Copyright (c) 2026 Bidlance Team
+Copyright (c) 2026 Swift Source Team
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
