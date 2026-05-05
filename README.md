@@ -6,7 +6,7 @@
 
 A comprehensive vendor bidding and project management system built on Salesforce platform. Allows clients to post projects, vendors to submit competitive bids, and provides intelligent bid recommendations for optimal vendor selection.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [Architecture](#architecture)
