@@ -322,12 +322,12 @@ Best Overall    → MAX(overallScore)
 **Example:**
 ```
 Bids submitted:
-- Vendor A: $8,000, 15 days
-- Vendor B: $12,000, 7 days
-- Vendor C: $10,000, 10 days
+- Vendor A: ₹8,000, 15 days
+- Vendor B: ₹12,000, 7 days
+- Vendor C: ₹10,000, 10 days
 
 Results:
-Lowest Price: Vendor A ($8,000)
+Lowest Price: Vendor A (₹8,000)
 Fastest Delivery: Vendor B (7 days)
 Best Overall: Vendor C (Score: 0.55)
 ```
